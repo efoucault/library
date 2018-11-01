@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Home", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Ajouter un livre", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Twelveurs", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Home", livres_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ajouter un livre", new_livre_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Twelveurs", users_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
