@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-8 col-xs-12">
         <h1><%= @livre.titre %> </h1>
-        <h2>Proposé par <%= @livre.user.email %></h2>
+        <h2>Proposé par <%= @livre.user.prenom %></h2>
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 col-xs-12">
-       <h2>L'avis de <%= @livre.user.email %> </h2>
+       <h2>L'avis de <%= @livre.user.prenom %> </h2>
        <iframe width="200" height="315" src="<%= @livre.video %>"></iframe>
     </div>
     <div class="col-lg-6 col-xs-12">
