@@ -4,6 +4,7 @@
       <%= f.input :titre %>
       <%= f.input :auteur %>
       <%= f.input :description %>
+      <%= f.association :user, label_method: :email %>
       <%= f.input :video %>
       <%= f.input :video_cache, as: :hidden %>
       <%= f.submit "Enregistrer", class: "btn btn-success"%>
