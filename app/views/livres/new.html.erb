@@ -1,10 +1,13 @@
+<div class="banner">
+  <h1>Ajoute un ouvrage à la bibliothèque </h1>
+</div>
 <div class="container">
   <%= simple_form_for @livre do |f| %>
     <div class="formulaire">
       <%= f.input :titre %>
       <%= f.input :auteur %>
       <%= f.input :description %>
-      <%= f.association :user, label_method: :email %>
+      <%= f.association :user, label_method: :prenom_nom %>
       <%= f.input :video %>
       <%= f.input :video_cache, as: :hidden %>
       <%= f.submit "Enregistrer", class: "btn btn-success"%>
