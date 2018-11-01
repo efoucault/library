@@ -1,3 +1,20 @@
-<% @livres.each do |livre| %>
-  <%= livre.titre %>
-<% end %>
+<div class="home-banner">
+  <h1>Bienvenue les lecteurs ! </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @livres.each do |livre| %>
+        <div class="card">
+          <div class="card-category"><%= livre.user.prenom %></div>
+          <div class="card-description">
+            <h2><%= livre.titre %> </h2>
+            <p><%= livre.auteur %></p>
+          </div>
+          <%= cl_image_tag livre.user.photo, class: "card-user" %>
+          <a class="card-link" href="#" ></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
