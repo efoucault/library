@@ -7,8 +7,8 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
-      <% @livres.each do |livre| %>
+    <% @livres.each do |livre| %>
+      <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
         <div class="card">
           <div class="card-category"><%= livre.user.prenom %></div>
           <div class="card-description">
@@ -17,8 +17,8 @@
           </div>
           <%= cl_image_tag livre.user.photo, class: "card-user" %>
           <%= link_to "", livre_path(livre), class: 'card-link' %>
+          </div>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
