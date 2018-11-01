@@ -3,10 +3,43 @@
   height: 30vh;
   background-color: #CD0B20;
   text-align: center;
+  margin:0 auto;
+  h1 {
+    margin-top: 0;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    font-size: 3em;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  .searchbar {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+    opacity: 0.9;
+    .form-control {
+      width: 80%;
+    }
+  }
 }
-.home-banner h1 {
-  margin-top: 0;
-  padding-top: 2em;
-  font-size: 3em;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+
+@media screen and (max-width: 640px) {
+  .home-banner {
+    height: 20vh;
+    .searchbar {
+      margin-left: 0;
+      margin-right: 0;
+
+      .form-control {
+        width: 80%;
+      }
+    }
+    h1 {
+      margin-top: 0;
+      padding-top: 1.5em;
+      padding-bottom: 0.5em;
+      font-size: 1.5em;
+      text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
