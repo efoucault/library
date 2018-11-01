@@ -1,6 +1,10 @@
 class LivresController < ApplicationController
   def index
-    @livres = Livre.all
+    if params[:query].present?
+      @livres = Livre.search_livres(params['query'])
+    else
+      @livres = Livre.all
+    end
   end
 
   def show

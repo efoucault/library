@@ -14,11 +14,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 col-xs-12">
-       <h2>L'avis de <%= @livre.user.prenom %> </h2>
+       <h2>L'avis de <strong><%= @livre.user.prenom %></strong> </h2>
        <iframe width="200" height="315" src="<%= @livre.video %>"></iframe>
     </div>
     <div class="col-lg-6 col-xs-12">
-      <h2><%= @livre.auteur %> </h2>
+      <h2>Un livre de <strong><%= @livre.auteur %></strong> </h2>
       <p><%= @livre.description %></p>
     </div>
   </div>
