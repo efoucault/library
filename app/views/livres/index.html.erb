@@ -10,12 +10,20 @@
     <% @livres.each do |livre| %>
       <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
         <div class="card">
-          <div class="card-category"><%= livre.user.prenom %></div>
+          <% if livre.user.prenom.present? %>
+            <div class="card-category"><%= livre.user.prenom %></div>
+          <% else %>
+            <div class="card-category">12eur inconnu</div>
+          <% end %>
           <div class="card-description">
             <h2><%= livre.titre %> </h2>
             <p><%= livre.auteur %></p>
           </div>
-          <%= cl_image_tag livre.user.photo, class: "card-user" %>
+          <% if livre.user.photo.present? %>
+            <%= cl_image_tag livre.user.photo, class: "card-user" %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
+          <% end %>
           <%= link_to "", livre_path(livre), class: 'card-link' %>
           </div>
         </div>

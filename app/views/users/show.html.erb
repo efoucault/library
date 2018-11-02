@@ -1,12 +1,44 @@
-<div class="container">
-  <div class="user-list">
-    <div class="row">
-      <div class="col-xs-4">
+<div class="banner">
+  <div class="user-profile">
+    <div class="user-photo">
+      <% if @user.photo.present? %>
         <%= cl_image_tag @user.photo, class: "avatar" %>
-      </div>
-      <div class="col-xs-4">
-        <h2><%= @user.prenom %> <%= @user.nom %></h2>
-      </div>
+      <% else %>
+        <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar") %>
+      <% end %>
     </div>
+    <div class="user-name">
+      <h1><%= @user.prenom %> <%= @user.nom %>
+      <%= link_to edit_user_path(@user), id:"white-link" do %>
+        <i class="fas fa-edit"></i></h1>
+      <% end %>
+    </div>
+    <div class="user-update">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @user.livres.each do |livre| %>
+      <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
+        <div class="card">
+          <% if livre.user.prenom.present? %>
+            <div class="card-category"><%= livre.user.prenom %></div>
+          <% else %>
+            <div class="card-category">12eur inconnu</div>
+          <% end %>
+          <div class="card-description">
+            <h2><%= livre.titre %> </h2>
+            <p><%= livre.auteur %></p>
+          </div>
+          <% if livre.user.photo.present? %>
+            <%= cl_image_tag livre.user.photo, class: "card-user" %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
+          <% end %>
+          <%= link_to "", livre_path(livre), class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>

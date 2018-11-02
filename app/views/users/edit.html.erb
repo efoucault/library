@@ -1,8 +1,14 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :prenom %>
-  <%= f.input :nom %>
-  <%= f.input :email %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
+<div class="banner">
+  <h1>Mise à jour de l'utilisateur </h1>
+</div>
+<div class="container">
+  <%= simple_form_for(@user) do |f| %>
+     <%= f.label :prenom, 'Prénom' %>
+    <%= f.input :prenom, label: false %>
+    <%= f.input :nom %>
+    <%= f.input :email %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+</div>
