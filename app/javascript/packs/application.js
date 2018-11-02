@@ -53,16 +53,17 @@ function ClickItem(data) {
   var description = document.querySelector("#livre_description");
   var titre = document.querySelector("#livre_titre");
   var auteur = document.querySelector("#livre_auteur");
-  // var pochette = document.querySelector("#livre_pochette");
+  var pochette = document.querySelector("#livre_pochette");
   if (resultatsCliques !== null) {
     resultatsCliques.forEach((resultat) => {
       resultat.addEventListener("click", (event) => {
         const index = event.currentTarget.dataset.compteur;
         description.value = data.items[index].volumeInfo.description;
         auteur.value = data.items[index].volumeInfo.authors[0];
-        // if (data.items[index].volumeInfo.imageLinks !== undefined) {
+        if (data.items[index].volumeInfo.imageLinks !== undefined) {
+            console.log("pochette");
         //   pochette.value = data.items[index].volumeInfo.imageLinks.thumbnail;
-        // }
+        }
       });
     });
   }
