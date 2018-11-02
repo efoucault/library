@@ -40,17 +40,29 @@ contenu.addEventListener('blur', (evt) => {
   });
 });
 
+// Get Book thumbnail
+function bookThumbnail(data, compteur) {
+   var thumbnail = "https://books.google.fr/googlebooks/images/no_cover_thumb.gif"
+   if (data.items[compteur].volumeInfo.imageLinks !== undefined) {
+      thumbnail = data.items[compteur].volumeInfo.imageLinks.thumbnail;
+   }
+  return thumbnail;
+}
+
 function ClickItem(data) {
   const resultatsCliques = document.querySelectorAll(".resultat");
   var description = document.querySelector("#livre_description");
   var titre = document.querySelector("#livre_titre");
   var auteur = document.querySelector("#livre_auteur");
+  var pochette = document.querySelector("#livre_pochette");
   if (resultatsCliques !== null) {
     resultatsCliques.forEach((resultat) => {
       resultat.addEventListener("click", (event) => {
         const index = event.currentTarget.dataset.compteur;
+  console.log(data.items[index].volumeInfo.imageLinks.thumbnail)
         description.value = data.items[index].volumeInfo.description;
         auteur.value = data.items[index].volumeInfo.authors[0];
+        pochette.value = bookThumbnail(data, index);
       });
     });
   }
