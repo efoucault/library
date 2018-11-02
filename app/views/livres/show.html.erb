@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-lg-6 col-xs-12">
        <h2>L'avis de <strong><%= @livre.user.prenom %></strong> </h2>
-       <iframe width="200" height="315" src="<%= @livre.video %>"></iframe>
+       <video width="300" height="500" controls><source src="<%= @livre.video %>" type="video/mp4"></video>
     </div>
     <div class="col-lg-6 col-xs-12">
       <h2>Un livre de <strong><%= @livre.auteur %></strong> </h2>
