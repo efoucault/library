@@ -1,11 +1,16 @@
 .user-list {
   border-bottom: 1px rgb(200, 200, 200) solid;
+  display: block;
+  vertical-align: middle;
+  float: none;
   .avatar {
     border-radius: 50%;
-    width: 100px;
+    width: 60px;
     padding-bottom: 10px;
+    padding-top: 10px;
   }
   .fas {
+    padding-top: 0.8em;
     color: #F3B800;
     font-size: 2em;
   }
