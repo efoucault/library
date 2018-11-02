@@ -61,8 +61,7 @@ function ClickItem(data) {
         description.value = data.items[index].volumeInfo.description;
         auteur.value = data.items[index].volumeInfo.authors[0];
         if (data.items[index].volumeInfo.imageLinks !== undefined) {
-            console.log("pochette");
-        //   pochette.value = data.items[index].volumeInfo.imageLinks.thumbnail;
+          pochette.value = data.items[index].volumeInfo.imageLinks.thumbnail;
         }
       });
     });
