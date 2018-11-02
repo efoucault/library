@@ -52,11 +52,22 @@
     padding-top: 1em;
     height: 25vh;
   }
-  .banner, .banner-livre h1 {
+  .banner h1 {
     font-size: 1.5em;
     font-weight: bold;
   }
-  .banner, .banner-livre h2 {
+  .banner h2 {
+    font-size: 1em;
+    a {
+      color: white;
+      font-size: 1em;
+    }
+  }
+  .banner-livre h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .banner-livre h2 {
     font-size: 1em;
     a {
       color: white;
