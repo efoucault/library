@@ -21,6 +21,19 @@ class LivresController < ApplicationController
     redirect_to livre_path(@livre)
   end
 
+  def edit
+    @livre = Livre.find(params[:id])
+  end
+
+  def update
+    @livre = Livre.find(params[:id])
+      if @livre.update(livre_params)
+        redirect_to livre_path(@livre)
+      else
+       render :edit
+      end
+  end
+
   private
 
   def livre_params
