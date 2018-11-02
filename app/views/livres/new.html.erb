@@ -1,3 +1,4 @@
+<p class="googlebook_key" data-google="<%= "#{ENV['GOOGLE_BOOK']}" %>" ></p>
 <div class="banner">
   <h1>Ajoute un ouvrage à la bibliothèque </h1>
 </div>
@@ -5,6 +6,7 @@
   <%= simple_form_for @livre do |f| %>
     <div class="formulaire">
       <%= f.input :titre %>
+      <div class="resultats hidden"></div>
       <%= f.input :auteur %>
       <%= f.input :description %>
       <%= f.association :user, label_method: :prenom_nom %>
@@ -14,3 +16,5 @@
     </div>
   <% end %>
 </div>
+
+
