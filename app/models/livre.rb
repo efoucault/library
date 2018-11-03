@@ -2,6 +2,7 @@ class Livre < ApplicationRecord
   belongs_to :user
   has_many :emprunts
   mount_uploader :video, VideoUploader
+  validates :user, :titre, presence: true
 
   include PgSearch
   pg_search_scope :search_livres,

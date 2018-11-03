@@ -11,8 +11,16 @@
       <%= f.input :date_debut, as: :date, html5: true, label: false %>
       <%= f.label :date_fin, "Fin de l'emprunt" %>
       <%= f.input :date_fin, as: :date, html5: true, label: false %>
+      <%= f.label :note, "Note" %>
+      <%= f.input :note, as: :hidden %>
+      <div class="notation">
+        <i class="fas fa-star clickstar" data-star="1"></i>
+        <i class="fas fa-star clickstar" data-star="2"></i>
+        <i class="fas fa-star clickstar" data-star="3"></i>
+        <i class="fas fa-star clickstar" data-star="4"></i>
+        <i class="fas fa-star clickstar" data-star="5"></i>
+      </div>
       <%= f.input :avis %>
-      <%= f.input :note %>
       <%= f.submit "Enregistrer", class: "btn btn-success"%>
     </div>
   <% end %>
