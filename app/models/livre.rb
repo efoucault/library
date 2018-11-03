@@ -1,5 +1,6 @@
 class Livre < ApplicationRecord
   belongs_to :user
+  has_many :emprunts
   mount_uploader :video, VideoUploader
 
   include PgSearch
@@ -11,4 +12,8 @@ class Livre < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  def titre_auteur
+    "#{titre} - #{auteur}"
+  end
 end

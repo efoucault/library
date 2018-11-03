@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :livres
+  has_many :emprunts
   validate :email_domain
   mount_uploader :photo, VideoUploader
 # Include default devise modules. Others available are:
