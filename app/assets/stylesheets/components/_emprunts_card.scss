@@ -1,0 +1,35 @@
+.emprunt {
+  padding-top: 1em;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.entete {
+  display: flex;
+  .avatar-emprunteur {
+    width: 20%;
+    img {
+      width: 4em;
+      border-radius: 50%;
+    }
+  }
+  .fa-star {
+    color: #F3B800;
+  }
+}
+.avis-emprunteur {
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 640px) {
+  .entete {
+    .avatar-emprunteur {
+      img {
+        width: 3em;
+      }
+    }
+  }
+  .avis-emprunteur {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+}

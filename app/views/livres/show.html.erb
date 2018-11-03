@@ -21,5 +21,28 @@
       <p class="description"><%= @livre.description %></p>
     </div>
   </div>
+  <% if @livre.emprunts.count > 0 %>
+    <div class="emprunt-display">
+      <h2>Emprunts et avis</h2>
+      <% @livre.emprunts.each do |emprunt| %>
+        <div class="emprunt">
+          <div class="entete">
+            <div class="avatar-emprunteur">
+              <%= cl_image_tag emprunt.user.photo %>
+            </div>
+            <div class="detail-emprunt">
+              <p><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
+              <% emprunt.note.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="avis-emprunteur">
+            <p><%= emprunt.avis %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
