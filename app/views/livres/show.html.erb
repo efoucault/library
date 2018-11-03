@@ -1,13 +1,19 @@
 <div class="banner-livre">
-  <div class="pochette">
-    <%= cl_image_tag @livre.pochette %>
-  </div>
-  <div class="infos">
-    <h1><%= @livre.titre %> </h1>
-    <h2>Proposé par <%= @livre.user.prenom %>
-      <%= link_to edit_livre_path(@livre), id:"white-link" do %>
-        <i class="fas fa-edit"></i></h2>
-      <% end %>
+  <div class="banner-container">
+    <div class="pochette">
+      <%= cl_image_tag @livre.pochette %>
+    </div>
+    <div class="infos">
+      <h1 id="title"><%= @livre.titre %> </h1>
+      <h2 id="propose-par">Proposé par <%= @livre.user.prenom %>
+        <%= link_to edit_livre_path(@livre), id:"white-link" do %>
+          <i class="fas fa-edit"></i></h2>
+        <% end %>
+    </div>
+    <div class="moyenne">
+      <h1 id="average"><%= @livre.emprunts.average(:note) %> /5</h1>
+      <%= link_to "Emprunter", new_livre_emprunt_path(@livre), class: "btn btn-success", id: "btn-emprunt" %>
+    </div>
   </div>
 </div>
 <div class="container">
@@ -31,7 +37,7 @@
               <%= cl_image_tag emprunt.user.photo %>
             </div>
             <div class="detail-emprunt">
-              <p><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
+              <p id="titre-avis"><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
               <% emprunt.note.times do  %>
                 <i class="fas fa-star"></i>
               <% end %>
