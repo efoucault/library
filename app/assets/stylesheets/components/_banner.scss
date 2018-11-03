@@ -23,19 +23,35 @@
 
 .banner-livre {
   display: flex;
+  justify-content: center;
   margin-top: 0;
-  padding-left: 20%;
-  padding-top: 1.5em;
-  text-align: center;
+  // padding-left: 20%;
+  // padding-top: 1.5em;
+  // text-align: center;
   color: white;
   height: 20vh;
   background-color: #CD0B20;
-  max-width: 100vw;
+  // max-width: 100vw;
+  .banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    // border: 2px solid black;
+  }
   img {
     height: 16vh;
   }
+  .pochette {
+    // border: 2px solid yellow;
+  }
   .infos {
+    padding-top: 2em;
     padding-left: 10%;
+    width: 70%;
+    // border: 2px solid blue;
+    height: 100%;
   }
   h2 {
     font-size: 2em;
@@ -45,7 +61,30 @@
     color: white;
     font-size: 0.5em;
   }
+  .moyenne {
+    padding-top: 2em;
+    // border: 2px solid green;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+  }
+  #average {
+    margin-top: 0em;
+    margin-bottom: 1em;
+    font-weight: 800;
+  }
+
+  #btn-emprunt {
+    font-size: 1em;
+  }
+  #title {
+    margin-top: 0em;
+  }
+  #propose-par {
+    margin-top: 0.3em;
+  }
 }
+
 
 @media screen and (max-width: 640px) {
   .banner {
@@ -63,15 +102,37 @@
       font-size: 1em;
     }
   }
-  .banner-livre h1 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  .banner-livre h2 {
-    font-size: 1em;
-    a {
-      color: white;
+  .banner-livre {
+    height: 50vh;
+    align-items: center;
+    h1 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    h2 {
       font-size: 1em;
+      a {
+        color: white;
+        font-size: 1em;
+      }
+    }
+    .banner-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+      .moyenne {
+        padding-top: 0em;
+        width: 100%;
+      }
+      .infos {
+        padding-top: 0.5em;
+        padding-left: 0%;
+        width: 100%;
+      }
+      .pochette {
+        width: 100%;
+      }
     }
   }
 }
