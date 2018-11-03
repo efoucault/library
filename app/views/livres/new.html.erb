@@ -5,11 +5,12 @@
 <div class="container">
   <%= simple_form_for @livre do |f| %>
     <div class="formulaire">
+      <%= f.label :user, "Twelveur" %>
+      <%= f.association :user, label_method: :prenom_nom, label: false%>
       <%= f.input :titre %>
       <div class="resultats hidden"></div>
       <%= f.input :auteur %>
       <%= f.input :description %>
-      <%= f.association :user, label_method: :prenom_nom %>
       <%= f.input :video %>
       <%= f.input :video_cache, as: :hidden %>
       <%= f.input :pochette, as: :hidden %>

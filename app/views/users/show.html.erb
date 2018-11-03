@@ -10,8 +10,10 @@
     <div class="user-name">
       <% if @user.prenom.present? || @user.nom.present? %>
         <h1><%= @user.prenom %> <%= @user.nom %>
-        <%= link_to edit_user_path(@user), id:"white-link" do %>
-          <i class="fas fa-edit"></i></h1>
+        <% if current_user == @user %>
+          <%= link_to edit_user_path(@user), id:"white-link" do %>
+            <i class="fas fa-edit"></i></h1>
+          <% end %>
         <% end %>
       <% else %>
         <h1>12eur inconnu

@@ -13,6 +13,7 @@ class LivresController < ApplicationController
 
   def new
     @livre = Livre.new
+    @livre.user = current_user
   end
 
   def create

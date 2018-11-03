@@ -6,9 +6,11 @@
     <div class="infos">
       <h1 id="title"><%= @livre.titre %> </h1>
       <h2 id="propose-par">Proposé par <%= @livre.user.prenom %>
+      <% if current_user == @livre.user %>
         <%= link_to edit_livre_path(@livre), id:"white-link" do %>
           <i class="fas fa-edit"></i></h2>
         <% end %>
+      <% end %>
     </div>
     <div class="moyenne">
       <h1 id="average"><%= @livre.emprunts.average(:note) %> /5</h1>
@@ -40,6 +42,13 @@
               <p id="titre-avis"><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
               <% emprunt.note.times do  %>
                 <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+            <div class="edit-avis">
+              <% if current_user == emprunt.user %>
+                <%= link_to edit_livre_emprunt_path(@livre, emprunt), class:"grey-link" do %>
+                  <i class="fas fa-edit"></i></h2>
+                <% end %>
               <% end %>
             </div>
           </div>

@@ -11,6 +11,9 @@ class EmpruntsController < ApplicationController
   def new
     @livre = Livre.find(params[:livre_id])
     @emprunt = Emprunt.new
+    @emprunt.user = current_user
+    @emprunt.livre = @livre
+    @emprunt.date_debut = DateTime.now
   end
 
   def create

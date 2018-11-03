@@ -40,6 +40,11 @@
 }
 
 @media screen and (max-width: 640px) {
+  .user-list {
+    h2 {
+      font-size: 1em;
+    }
+  }
   .user-profile {
     margin-left: 0;
     flex-direction: column;
