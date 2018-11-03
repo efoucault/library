@@ -1,0 +1,18 @@
+<div class="banner-livre">
+  <div class="pochette">
+    <%= cl_image_tag @livre.pochette %>
+  </div>
+  <div class="infos">
+    <h1><%= @livre.titre %> </h1>
+    <h2>Lu par <%= @emprunt.user.prenom %>
+      <%= link_to edit_livre_emprunt_path(@livre, @emprunt), id:"white-link" do %>
+        <i class="fas fa-edit"></i></h2>
+      <% end %>
+  </div>
+</div>
+<div class="container">
+  <p><strong>Date d'emprunt : </strong><%= @emprunt.date_debut %></p>
+  <p><strong>Date de rendu : </strong><%= @emprunt.date_fin %></p>
+  <p><strong>Avis : </strong><%= @emprunt.avis %></p>
+  <p><strong>Note : </strong><%= @emprunt.note %></p>
+</div>

@@ -1,0 +1,16 @@
+<div class="banner">
+  <h1>Mise à jour </h1>
+</div>
+<div class="container">
+  <%= simple_form_for [@livre, @emprunt] do |f| %>
+    <div class="formulaire">
+      <%= f.association :user, label_method: :prenom_nom %>
+      <%= f.association :livre, label_method: :titre_auteur %>
+      <%= f.input :date_debut, as: :date, html5: true %>
+      <%= f.input :date_fin, as: :date, html5: true %>
+      <%= f.input :avis %>
+      <%= f.input :note %>
+      <%= f.submit "Enregistrer", class: "btn btn-success"%>
+    </div>
+  <% end %>
+</div>
