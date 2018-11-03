@@ -19,8 +19,12 @@ class EmpruntsController < ApplicationController
   def create
     @emprunt = Emprunt.new(emprunt_params)
     @emprunt.livre = Livre.find(params[:livre_id])
-    @emprunt.save!
-    redirect_to livre_path(@emprunt.livre)
+    if @emprunt.save.valid?
+      @emprunt.save!
+      redirect_to livre_path(@emprunt.livre)
+    else
+      render :edit
+    end
   end
 
   def edit

@@ -1,0 +1,23 @@
+.flexbox {
+  display: flex;
+}
+.mes-livres {
+  width: 45%;
+  margin-right: 5%;
+}
+.mes-emprunts {
+  width: 45%;
+}
+
+@media screen and (max-width: 640px) {
+  .flexbox {
+    flex-direction: column;
+  }
+  .mes-livres {
+    width: 100%;
+    margin-right: 0;
+  }
+  .mes-emprunts {
+    width: 100%;
+  }
+}
