@@ -13,7 +13,11 @@
       <% end %>
     </div>
     <div class="moyenne">
-      <h1 id="average"><%= @livre.emprunts.average(:note) %> /5</h1>
+      <% if @livre.emprunts.count > 0 %>
+        <h1 id="average"><%= @livre.emprunts.average(:note).round(1) %> /5</h1>
+      <% else %>
+        <h2>0 note</h2>
+      <% end %>
       <%= link_to "Emprunter", new_livre_emprunt_path(@livre), class: "btn btn-success", id: "btn-emprunt" %>
     </div>
   </div>

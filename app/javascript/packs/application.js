@@ -1,5 +1,24 @@
 import "bootstrap";
 
+const stars = document.querySelectorAll(".clickstar");
+
+stars.forEach((star) => {
+  star.addEventListener("click", (event) => {
+    stars.forEach((star) => {
+      star.classList.remove("yellow")
+    });
+    var compteur = star.dataset.star;
+    const note = document.querySelector("#emprunt_note");
+    note.value = compteur;
+    stars.forEach((star) => {
+      if (star.dataset.star <= compteur) {
+        star.classList.add("yellow");
+      }
+    });
+  });
+});
+
+
 const resultats = document.querySelector(".resultats");
 const bookKey = document.querySelector('.googlebook_key').dataset.google;
 const contenu = document.querySelector("#livre_titre");
@@ -67,3 +86,4 @@ function ClickItem(data) {
     });
   }
 }
+
