@@ -5,7 +5,7 @@
   <div class="infos">
     <h1><%= @livre.titre %> </h1>
     <h2>Lu par <%= @emprunt.user.prenom %>
-      <%= link_to edit_livre_emprunt_path(@livre, @emprunt), id:"white-link" do %>
+      <%= link_to edit_livre_emprunt_path(@livre, @emprunt), class:"white-link" do %>
         <i class="fas fa-edit"></i></h2>
       <% end %>
   </div>
