@@ -76,9 +76,13 @@ function ClickItem(data) {
   if (resultatsCliques !== null) {
     resultatsCliques.forEach((resultat) => {
       resultat.addEventListener("click", (event) => {
+        resultatsCliques.forEach((resultat) => {
+          resultat.classList.remove('selected');
+        });
         const index = event.currentTarget.dataset.compteur;
         description.value = data.items[index].volumeInfo.description;
         auteur.value = data.items[index].volumeInfo.authors[0];
+        resultat.classList.add('selected');
         if (data.items[index].volumeInfo.imageLinks !== undefined) {
           pochette.value = data.items[index].volumeInfo.imageLinks.thumbnail;
         }
