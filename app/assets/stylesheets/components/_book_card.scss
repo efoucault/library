@@ -11,13 +11,20 @@
   height: auto;
   text-align: center;
   .livre-couverture {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
     height: 100%;
   }
   .details {
-
+    padding-top: 0.5em;
   }
   #auteur {
   }
+}
+
+.selected {
+  background-color: rgba(243, 184, 0, 0.8);
+  border-radius: 1%;
 }
 
 @media screen and (max-width: 640px) {
