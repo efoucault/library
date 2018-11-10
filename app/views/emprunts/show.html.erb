@@ -1,9 +1,13 @@
 <div class="banner-livre">
   <div class="pochette">
-    <%= cl_image_tag @livre.pochette %>
+    <%= link_to livre_path(@livre), class:"grey-link" do %>
+      <%= cl_image_tag @livre.pochette %>
+    <% end %>
   </div>
   <div class="infos">
-    <h1><%= @livre.titre %> </h1>
+    <%= link_to livre_path(@livre), class:"grey-link" do %>
+      <h1><%= @livre.titre %> </h1>
+    <% end %>
     <h2>Lu par <%= @emprunt.user.prenom %>
       <%= link_to edit_livre_emprunt_path(@livre, @emprunt), class:"white-link" do %>
         <i class="fas fa-edit"></i></h2>
