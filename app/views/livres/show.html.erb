@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <div class="moyenne">
-      <% if @livre.emprunts.count > 0 %>
+      <% if @livre.emprunts.sum(:note) > 0 %>
         <h1 id="average"><%= @livre.emprunts.average(:note).round(1) %> /5</h1>
       <% else %>
         <h2>0 note</h2>
@@ -40,12 +40,18 @@
         <div class="emprunt">
           <div class="entete">
             <div class="avatar-emprunteur">
-              <%= cl_image_tag emprunt.user.photo %>
+              <% if emprunt.user.photo.present? %>
+                <%= cl_image_tag emprunt.user.photo %>
+              <% else %>
+                <%= image_tag('https://www.limestone.edu/sites/default/files/user.png') %>
+              <% end %>
             </div>
             <div class="detail-emprunt">
               <p id="titre-avis"><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
-              <% emprunt.note.times do  %>
-                <i class="fas fa-star"></i>
+              <% if emprunt.note != nil %>
+                <% emprunt.note.times do  %>
+                  <i class="fas fa-star"></i>
+                <% end %>
               <% end %>
             </div>
             <div class="edit-avis">
