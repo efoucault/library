@@ -18,6 +18,15 @@ stars.forEach((star) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  const note = document.querySelector("#emprunt_note");
+  const stars = document.querySelectorAll(".clickstar");
+  stars.forEach((star) => {
+      if (star.dataset.star <= note.value) {
+        star.classList.add("yellow");
+      }
+    });
+});
 
 const resultats = document.querySelector(".resultats");
 const bookKey = document.querySelector('.googlebook_key').dataset.google;
