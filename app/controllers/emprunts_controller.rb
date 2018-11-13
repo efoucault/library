@@ -1,4 +1,5 @@
 class EmpruntsController < ApplicationController
+
   def index
     @emprunts = Emprunt.all
   end
@@ -21,6 +22,7 @@ class EmpruntsController < ApplicationController
     @emprunt.livre = Livre.find(params[:livre_id])
     if @emprunt.save
       @emprunt.save!
+      EmpruntMailer.emprunt(@emprunt).deliver_now
       redirect_to livre_path(@emprunt.livre)
     else
       render :edit
