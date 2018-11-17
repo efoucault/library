@@ -100,3 +100,25 @@ function ClickItem(data) {
   }
 }
 
+// click on choose file when clicking on the camera icon
+const cameraIcon = document.querySelector(".fa-video");
+if (cameraIcon != null) {
+  cameraIcon.addEventListener("click", (event) => {
+    const index = event.currentTarget.dataset.index;
+    document.getElementById("livre_video").click();
+  });
+}
+
+// Preview de la video lors de la création d'un livre
+const videoCachee = document.querySelector(".video");
+const preview = document.querySelector(".video-preview");
+if (cameraIcon != null && preview != null) {
+  videoCachee.addEventListener("change", (event) => {
+    preview.classList.remove("hidden");
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        $(".video-preview").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(videoCachee.files[0]);
+  });
+}

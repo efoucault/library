@@ -11,7 +11,11 @@
       <div class="resultats hidden"></div>
       <%= f.input :auteur %>
       <%= f.input :description %>
-      <%= f.input :video %>
+      <%= f.input :video, input_html: { class: 'video hidden'} %>
+      <i class="fas fa-video"></i><br>
+      <div class="preview">
+        <video id="img_prev" src="#" class="video-preview hidden" width="300" height="500" controls><source type="video/mp4"></video>
+      </div>
       <%= f.input :video_cache, as: :hidden %>
       <%= f.input :pochette, as: :hidden %>
       <%= f.submit "Enregistrer", class: "btn btn-success"%>
