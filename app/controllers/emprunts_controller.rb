@@ -37,11 +37,14 @@ class EmpruntsController < ApplicationController
   def update
     @livre = Livre.find(params[:livre_id])
     @emprunt = Emprunt.find(params[:id])
-      if @emprunt.update(emprunt_params)
-        redirect_to livre_path(@emprunt.livre)
-      else
-       render :edit
+    if @emprunt.update(emprunt_params)
+      if @emprunt.note != nil
+        EmpruntMailer.rendu(@emprunt).deliver_now
       end
+      redirect_to livre_path(@emprunt.livre)
+    else
+     render :edit
+    end
   end
 
   def destroy
@@ -55,5 +58,5 @@ end
 private
 
 def emprunt_params
-  params.require(:emprunt).permit(:user_id, :date_debut, :date_debut, :avis, :note, :livre_id)
+  params.require(:emprunt).permit(:user_id, :date_debut, :date_fin, :avis, :note, :livre_id)
 end

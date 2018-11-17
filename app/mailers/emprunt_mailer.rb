@@ -11,4 +11,11 @@ class EmpruntMailer < ApplicationMailer
 
     mail(to: @livre.user.email, subject: 'Ton livre a été emprunté')
   end
+
+  def rendu(emprunt)
+    @user = emprunt.user
+    @livre = emprunt.livre
+
+    mail(to: @livre.user.email, subject: 'Ton livre a été noté')
+  end
 end
