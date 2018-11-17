@@ -41,9 +41,13 @@
           <div class="entete">
             <div class="avatar-emprunteur">
               <% if emprunt.user.photo.present? %>
-                <%= cl_image_tag emprunt.user.photo %>
+                <%= link_to user_path(emprunt.user), id:"white-link" do %>
+                  <%= cl_image_tag emprunt.user.photo %>
+                <% end %>
               <% else %>
-                <%= image_tag('https://www.limestone.edu/sites/default/files/user.png') %>
+                <%= link_to user_path(emprunt.user), id:"white-link" do %>
+                  <%= image_tag('https://www.limestone.edu/sites/default/files/user.png') %>
+                <% end %>
               <% end %>
             </div>
             <div class="detail-emprunt">
