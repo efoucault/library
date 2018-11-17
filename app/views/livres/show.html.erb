@@ -5,7 +5,7 @@
     </div>
     <div class="infos">
       <h1 id="title"><%= @livre.titre %> </h1>
-      <h2 id="propose-par">Proposé par <%= @livre.user.prenom %>
+      <h2 id="propose-par">Proposé par <%= link_to @livre.user.prenom, user_path(@livre.user), class: "h2" %>
       <% if current_user == @livre.user %>
         <%= link_to edit_livre_path(@livre), id:"white-link" do %>
           <i class="fas fa-edit"></i></h2>
