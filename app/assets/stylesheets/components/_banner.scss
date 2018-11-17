@@ -39,6 +39,10 @@
     width: 70%;
     margin: 0 auto;
     // border: 2px solid black;
+    .h2 {
+      font-size: 35px;
+      color: #F2B60F;
+    }
   }
   img {
     height: 16vh;
@@ -116,6 +120,9 @@
         color: white;
         font-size: 1em;
       }
+    }
+    .h2 {
+      font-size: 1em !important;
     }
     .banner-container {
       flex-direction: column;
