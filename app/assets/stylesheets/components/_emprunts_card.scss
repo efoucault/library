@@ -2,7 +2,6 @@
   padding-top: 1em;
   border-bottom: 1px solid rgb(200, 200, 200);
 }
-
 .entete {
   display: flex;
   .avatar-emprunteur {
@@ -28,6 +27,33 @@
   color: #5A5A5A;
   padding-left: 1em;
 }
+
+.emprunts {
+  border-bottom: 1px rgb(200, 200, 200) solid;
+  display: block;
+  vertical-align: middle;
+  float: none;
+  .avatar {
+    border-radius: 50%;
+    width: 60px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .fas {
+    padding-top: 0.8em;
+    color: #F3B800;
+    font-size: 2em;
+  }
+  .pochette-mini {
+    height: 120px;
+  }
+  .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .entete {
     .avatar-emprunteur {
