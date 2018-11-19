@@ -51,7 +51,7 @@
               <% end %>
             </div>
             <div class="detail-emprunt">
-              <p id="titre-avis"><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut %> au <%= emprunt.date_fin %>)</p>
+              <p id="titre-avis"><strong><%= emprunt.user.prenom %></strong> (du <%= emprunt.date_debut.strftime("%d/%m/%Y") %> <%=emprunt.date_fin.present? ? "au #{emprunt.date_fin.strftime("%d/%m/%Y")}" : " - Pas encore rendu" %>)</p>
               <% if emprunt.note != nil %>
                 <% emprunt.note.times do  %>
                   <i class="fas fa-star"></i>
