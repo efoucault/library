@@ -1,3 +1,38 @@
-<% @emprunts.each do |emprunt| %>
-  <%= emprunt.livre.titre emprunt.user.nom %>
-<% end %>
+<div class="banner">
+  <h1>Liste des emprunts </h1>
+</div>
+<div class="container">
+  <% @emprunts.each do |emprunt| %>
+    <div class="emprunts">
+      <div class="row">
+        <div class="col-xs-3 vcenter">
+          <% if emprunt.user.photo.present? %>
+            <%= cl_image_tag emprunt.user.photo, class: "avatar" %><br>
+            <%= emprunt.user.prenom %> <%= emprunt.user.nom %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar") %><br>
+            <%= emprunt.user.prenom %> <%= emprunt.user.nom %>
+          <% end %>
+        </div>
+        <div class="col-xs-6 vcenter">
+          <% if emprunt.user.prenom.present? %>
+            <h3><%= emprunt.id %> - <%= emprunt.livre.titre %></h3>
+            <p><strong>Date d'emprunt :</strong> <%= emprunt.date_debut.strftime("%d/%m/%Y") %></p>
+            <% if emprunt.date_fin.present?  %>
+              <p><strong>Rendu le :</strong> <%= emprunt.date_fin.strftime("%d/%m/%Y") %></p>
+            <% else %>
+              <p><strong>Livre pas encore rendu</strong></p>
+            <% end %>
+          <% else %>
+            <h2><%= emprunt.user.email %></h2>
+          <% end %>
+        </div>
+        <div class="col-xs-2 vcenter">
+          <% if emprunt.livre.pochette.present? %>
+            <%= cl_image_tag emprunt.livre.pochette, class: "pochette-mini" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

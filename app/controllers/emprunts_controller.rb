@@ -1,7 +1,11 @@
 class EmpruntsController < ApplicationController
 
   def index
-    @emprunts = Emprunt.all
+    if params[:livre_id]
+      @emprunts = Livre.find(params[:livre_id]).emprunts
+    else
+      @emprunts = Emprunt.all
+    end
   end
 
   def show
