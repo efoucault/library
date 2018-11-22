@@ -71,6 +71,12 @@
     text-align: center;
     width: 20%;
     height: 100%;
+    h2 {
+      margin-top: 0 !important;
+    }
+    h1 {
+      margin-bottom: 20px !important;
+    }
   }
   #average {
     margin-top: 0em;
