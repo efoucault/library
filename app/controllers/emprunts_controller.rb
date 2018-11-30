@@ -26,7 +26,9 @@ class EmpruntsController < ApplicationController
     @emprunt.livre = Livre.find(params[:livre_id])
     if @emprunt.save
       @emprunt.save!
-      EmpruntMailer.emprunt(@emprunt).deliver_now
+      if @emprunt.livre.user.livre_emprunte == true
+        EmpruntMailer.emprunt(@emprunt).deliver_now
+      end
       redirect_to livre_path(@emprunt.livre)
     else
       render :edit
@@ -43,7 +45,9 @@ class EmpruntsController < ApplicationController
     @emprunt = Emprunt.find(params[:id])
     if @emprunt.update(emprunt_params)
       if @emprunt.note != nil
-        EmpruntMailer.rendu(@emprunt).deliver_now
+        if @emprunt.livre.user.livre_rendu == true
+          EmpruntMailer.rendu(@emprunt).deliver_now
+        end
       end
       redirect_to livre_path(@emprunt.livre)
     else

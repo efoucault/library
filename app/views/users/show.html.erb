@@ -73,4 +73,19 @@
       <% end %>
     </div>
   </div>
+  <div class="notifications">
+    <h2>Mes préférences de communication</h2>
+    <p>Notification lorsqu'un de mes livres est emprunté
+    <% if @user.livre_emprunte == true %>
+      <i class="fas fa-check-circle"></i>
+    <% else %>
+      <i class="fas fa-minus-circle"></i>
+    <% end %></p>
+    <p>Notification lorsqu'un de mes livres est rendu
+    <% if @user.livre_rendu == true %>
+      <i class="fas fa-check-circle"></i>
+    <% else %>
+      <i class="fas fa-minus-circle"></i>
+    <% end %></p>
+  </div>
 </div>
