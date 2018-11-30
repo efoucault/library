@@ -9,6 +9,10 @@
     <%= f.input :email %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.label :livre_emprunte, "Recevoir une notif. lors d'un emprunt" %>
+    <%= f.input :livre_emprunte, label: false %>
+    <%= f.label :livre_rendu, "Recevoir une notif. lorsque le livre est rendu" %>
+    <%= f.input :livre_rendu, label: false %>
     <%= f.button :submit, class: "btn btn-success" %>
   <% end %>
 </div>

@@ -9,6 +9,14 @@
   width: 45%;
 }
 
+.fa-check-circle {
+  color: green;
+}
+
+.fa-minus-circle {
+  color: #CB1424;
+}
+
 @media screen and (max-width: 640px) {
   .flexbox {
     flex-direction: column;
