@@ -1,0 +1,6 @@
+<p>Hello,</p><br>
+
+<p>Voici les livres créés cette semaine :</p>
+<% @livres.each do |livre| %>
+  <p>- <%= livre.titre %> <%= livre.created_at %></p>
+<% end %>
