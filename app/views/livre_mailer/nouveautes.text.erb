@@ -1,3 +1,9 @@
-Livre#nouveautes
+<p>Hello,</p><br>
 
-<%= @greeting %>, find me in app/views/livre_mailer/nouveautes.text.erb
+<p>Voici les livres créés cette semaine :</p>
+<% @livres.each do |livre| %>
+  <p>- <%= livre.titre %>, ajouté par <%= livre.user.prenom %> <%= livre.user.nom %></p>
+<% end %>
+ <p>Si tu ne souhaites pas recevoir cette notification, tu peux modifier tes préférences sur ton profil</p>
+
+<p>#Love</p>

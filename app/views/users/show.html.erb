@@ -75,6 +75,12 @@
   </div>
   <div class="notifications">
     <h2>Mes préférences de communication</h2>
+    <p>Notification hebdomadaire des nouveaux livres
+    <% if @user.notif_hebdo == true %>
+      <i class="fas fa-check-circle"></i>
+    <% else %>
+      <i class="fas fa-minus-circle"></i>
+    <% end %></p>
     <p>Notification lorsqu'un de mes livres est emprunté
     <% if @user.livre_emprunte == true %>
       <i class="fas fa-check-circle"></i>
