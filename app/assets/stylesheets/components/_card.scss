@@ -1,12 +1,27 @@
 .card {
-  height: 250px;
+  position: relative;
+}
+.card-top {
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format&fit=crop&w=1350&q=80');
+  // margin-bottom: 0.5em;
+}
+.card-bottom {
+  height: 50px;
   margin-bottom: 0.5em;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 0px 0px 5px 5px;
+  p {
+    color: rgb(120, 120, 120);
+    font-weight: 800;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
 }
 .card-user {
   position: absolute;
@@ -24,7 +39,7 @@
 }
 .card-description {
   position: absolute;
-  bottom: 40px;
+  bottom: 10px;
   left: 10px;
 }
 .card-description h2 {
@@ -37,8 +52,10 @@
   color: white;
 }
 .card-link {
+  height: 250px;
   position: absolute;
   top: 0;
+  left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
