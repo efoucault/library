@@ -11,6 +11,7 @@ class EmpruntsController < ApplicationController
   def show
     @livre = Livre.find(params[:livre_id])
     @emprunt = Emprunt.find(params[:id])
+    raise
   end
 
   def new

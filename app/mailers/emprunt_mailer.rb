@@ -18,4 +18,14 @@ class EmpruntMailer < ApplicationMailer
 
     mail(to: @livre.user.email, subject: 'Ton livre a été noté')
   end
+
+  def relance
+    @emprunts = Emprunt.select{ |emprunt| emprunt.user == 1 }
+    # @emprunts = Emprunt.select{ |emprunt| emprunt.note == nil && emprunt.date_fin == nil && emprunt.created_at < (Time.now - (30*24*60*60)) }
+    @emprunts.each do |emprunt|
+      @user = emprunt.user
+      @livre = emprunt.livre
+      mail(to: @user.email, subject: "Tu n'as pas encore fini ta lecture ?")
+    end
+  end
 end
