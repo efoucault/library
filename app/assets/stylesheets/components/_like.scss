@@ -1,0 +1,52 @@
+.like {
+  display: flex;
+  height: 230px;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  position: relative;
+}
+
+.like-pochette {
+  width: 35%;
+  .pochette {
+    padding-top: 20px;
+    max-height: 200px;
+    align-items: center;
+  }
+}
+
+.like-info {
+  margin-left: 10px;
+}
+
+.like-link {
+  height: 220px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.like-link:hover {
+  opacity: 0.1;
+}
+
+.fa-heart {
+  font-size: 70px;
+  color: #CB1424;
+}
+
+@media screen and (max-width: 640px) {
+  .like {
+    h3 {
+      font-size: 20px;
+      font-weight: 800;
+    }
+  }
+}
