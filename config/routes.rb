@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'livres#index'
   resources :livres do
     resources :emprunts
+      resources :likes, only: [:create, :destroy]
   end
   resources :users
   get 'emprunts' => 'emprunts#index', as: :emprunts

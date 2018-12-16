@@ -1,6 +1,7 @@
 class Livre < ApplicationRecord
   belongs_to :user
   has_many :emprunts
+  has_many :likes, dependent: :destroy
   mount_uploader :video, VideoUploader
   validates :user, :titre, presence: true
 
