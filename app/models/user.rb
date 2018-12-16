@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :livres
   has_many :emprunts
+  has_many :likes, dependent: :destroy
   validate :email_domain
   mount_uploader :photo, VideoUploader
 # Include default devise modules. Others available are:

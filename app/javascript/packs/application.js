@@ -28,6 +28,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
+// affichage des éléments de ma wishlist
+const wishlistButtons = document.querySelectorAll(".fa-list-alt");
+wishlistButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (button.dataset.like == "true") {
+      console.log("true");
+      button.classList.remove("like");
+    }
+    else {
+      console.log("false");
+      button.classList.add("like");
+    }
+  });
+});
+
 const resultats = document.querySelector(".resultats");
 const bookKey = document.querySelector('.googlebook_key').dataset.google;
 const contenu = document.querySelector("#livre_titre");
@@ -122,3 +137,5 @@ if (cameraIcon != null && preview != null) {
       reader.readAsDataURL(videoCachee.files[0]);
   });
 }
+
+
