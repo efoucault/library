@@ -32,7 +32,7 @@
               <% if Like.where(user_id: current_user.id, livre_id: livre.id).exists? %>
                 <% pre_like = livre.likes.find { |like| like.user_id == current_user.id} %>
                 <%= link_to livre_like_path(livre, pre_like), method: :delete do %>
-                  <i class="fas fa-list-alt like" data-like="true"></i></h2>
+                  <i class="fas fa-list-alt likeButton" data-like="true"></i></h2>
                 <% end %>
               <% else %>
                 <%= link_to livre_likes_path(livre), method: :post, params: { livre_id: livre.id } do %>
@@ -44,7 +44,7 @@
               <% if Like.where(user_id: current_user.id, livre_id: livre.id).exists? %>
                 <% pre_like = livre.likes.find { |like| like.user_id == current_user.id} %>
                 <%= link_to livre_like_path(livre, pre_like), method: :delete do %>
-                  <i class="fas fa-list-alt like" data-like="true"></i></h2>
+                  <i class="fas fa-list-alt likeButton" data-like="true"></i></h2>
                 <% end %>
               <% else %>
                   <%= link_to livre_likes_path(livre), method: :post, params: { livre_id: livre.id } do %>
