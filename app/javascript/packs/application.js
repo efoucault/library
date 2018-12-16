@@ -34,11 +34,11 @@ wishlistButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     if (button.dataset.like == "true") {
       console.log("true");
-      button.classList.remove("like");
+      button.classList.remove("likeButton");
     }
     else {
       console.log("false");
-      button.classList.add("like");
+      button.classList.add("likeButton");
     }
   });
 });
