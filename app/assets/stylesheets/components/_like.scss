@@ -19,6 +19,19 @@
 
 .like-info {
   margin-left: 10px;
+  width: 60%;
+}
+
+.like-suppression {
+  align-items: center;
+  width: 5%;
+  margin: auto;
+  .fa-trash-alt {
+    position: absolute;
+    z-index: 10;
+    font-size: 30px;
+    color: #F3B800;
+  }
 }
 
 .like-link {
@@ -35,11 +48,6 @@
 }
 .like-link:hover {
   opacity: 0.1;
-}
-
-.fa-heart {
-  font-size: 70px;
-  color: #CB1424;
 }
 
 @media screen and (max-width: 640px) {
