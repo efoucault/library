@@ -112,23 +112,26 @@
       <i class="fas fa-minus-circle"></i>
     <% end %></p>
   </div>
-    <div class="notifications">
+  <div class="notifications">
     <h2>Ma wishlist</h2>
     <% @user.likes.each do |like| %>
       <div class="like">
         <div class="like-pochette">
           <% if like.livre.pochette.present? %>
             <%= cl_image_tag like.livre.pochette, class: "pochette" %>
-          <% else %>
-<!--             <i class="fas fa-heart"></i>
- -->          <% end %>
+          <% end %>
         </div>
         <div class="like-info">
           <h3> <%= like.livre.titre %></h3>
           <p>De : <%= like.livre.auteur %></p>
           <p>Proposé par : <%= like.livre.user.prenom %></p>
         </div>
-      <%= link_to "", livre_path(like.livre), class: 'like-link' %>
+        <div class="like-suppression">
+          <%= link_to livre_like_path(like.livre, like), method: :delete do %>
+            <i class="fas fa-trash-alt likeButton" data-like="true"></i></h2>
+          <% end %>
+        </div>
+        <%= link_to "", livre_path(like.livre), class: 'like-link' %>
       </div>
     <% end %>
   </div>
