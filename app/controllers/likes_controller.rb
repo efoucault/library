@@ -6,13 +6,13 @@ class LikesController < ApplicationController
     if already_liked?
     else
       @livre.likes.create(user_id: current_user.id)
-      redirect_to livres_path
+      redirect_to request.referer
     end
   end
 
   def destroy
     @like.destroy
-    redirect_to livres_path
+    redirect_to request.referer
   end
 
   private
