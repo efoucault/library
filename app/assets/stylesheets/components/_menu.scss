@@ -1,0 +1,36 @@
+.menu {
+  background-color: rgb(235, 235, 235);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 70%;
+  margin: 0 auto;
+   .btn-show {
+      font-size: 16px;
+      border-radius: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+  .fa-list-alt {
+    color: rgb(150, 150, 150);
+    font-size: 30px;
+  }
+  .likeButton {
+  color: #F3B800;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .menu {
+      background-color: #CD0B20;
+    .fa-list-alt {
+    color: rgb(200, 200, 200);
+    }
+    .likeButton {
+    color: #F3B800;
+    }
+  }
+}
