@@ -34,7 +34,17 @@
 }
 
 @media screen and (max-width: 640px) {
-  .pochette {
-    max-height: 75;
+  .carou {
+    height: 60vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    .pochette {
+      padding-left: 0;
+    }
+    h3 {
+      font-size: 26px;
+    }
   }
 }
