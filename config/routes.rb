@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
-  root to: 'livres#index'
+  root to: 'home#index'
   resources :livres do
     resources :emprunts
       resources :likes, only: [:create, :destroy]
