@@ -43,6 +43,9 @@
     width: 50%;
     height: 60vh;
   }
+  h1 {
+    margin-bottom: 25px;
+  }
 }
 
 .podium {
@@ -52,15 +55,15 @@
 }
 .winner {
   display: flex;
-  position: relative;
   flex-direction: column;
+  justify-content: flex-end;
   text-align: center;
   height: 100%;
   width: 30%;
   z-index: 2;
   // align-items: flex-end;
   p {
-    font-size: 0.8em;
+    font-size: 18px;
     color: rgb(50, 50, 50);
     padding-top: 0.2em;
   }
@@ -69,8 +72,8 @@
 .number2 {
   height:200px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   background-color: #F3B800;
   border-radius: 0.3em 0.3em 0 0;
 }
@@ -78,8 +81,8 @@
 .number1 {
   height: 300px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   background-color: #F3B800;
   border-radius: 0.3em 0.3em 0 0;
   // text-align: center;
@@ -88,8 +91,8 @@
 .number3 {
   height: 150px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   background-color: #F3B800;
   border-radius: 0.3em 0.3em 0 0;
 }
