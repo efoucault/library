@@ -25,73 +25,78 @@
     <div class="user-update">
     </div>
   </div>
+  <div class="menu">
+    <i class="fas fa-book user-icons red"></i>
+    <i class="fas fa-glasses user-icons"></i>
+    <i class="fas fa-heart user-icons"></i>
+    <i class="fas fa-envelope user-icons"></i>
+  </div>
+</div>
 </div>
 <div class="container">
-  <div class="flexbox">
-    <div class="mes-livres">
-      <h2>Mes livres</h2>
-      <% @user.livres.each do |livre| %>
-        <div class="card">
-          <div class="card-top">
-            <% if livre.user.prenom.present? %>
-              <div class="card-category"><%= livre.user.prenom %></div>
-            <% else %>
-              <div class="card-category">12eur inconnu</div>
-            <% end %>
-            <div class="card-description">
-              <h2><%= livre.titre %> </h2>
-              <p><%= livre.auteur %></p>
-            </div>
-            <% if livre.user.photo.present? %>
-              <%= cl_image_tag livre.user.photo, class: "card-user" %>
-            <% else %>
-              <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
-            <% end %>
-            <%= link_to "", livre_path(livre), class: 'card-link' %>
+  <div class="mes-livres">
+    <h2>Mes livres</h2>
+    <% @user.livres.each do |livre| %>
+      <div class="card">
+        <div class="card-top">
+          <% if livre.user.prenom.present? %>
+            <div class="card-category"><%= livre.user.prenom %></div>
+          <% else %>
+            <div class="card-category">12eur inconnu</div>
+          <% end %>
+          <div class="card-description">
+            <h2><%= livre.titre %> </h2>
+            <p><%= livre.auteur %></p>
           </div>
-          <div class="card-bottom">
-            <% if livre.emprunts.sum(:note) > 0 %>
-              <p><%= livre.emprunts.average(:note).round(1) %>/5 (<%= livre.emprunts.count(:note) %> avis)</p>
-            <% else %>
-              <p>Pas encore de note</p>
-            <% end %>
-          </div>
+          <% if livre.user.photo.present? %>
+            <%= cl_image_tag livre.user.photo, class: "card-user" %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
+          <% end %>
+          <%= link_to "", livre_path(livre), class: 'card-link' %>
         </div>
-      <% end %>
-    </div>
-    <div class="mes-emprunts">
-      <h2>Mes Emprunts</h2>
-      <% @user.emprunts.each do |emprunt| %>
-        <div class="card">
-          <div class="card-top">
-            <% if emprunt.livre.user.prenom.present? %>
-              <div class="card-category"><%= emprunt.livre.user.prenom %></div>
-            <% else %>
-              <div class="card-category">12eur inconnu</div>
-            <% end %>
-            <div class="card-description">
-              <h2><%= emprunt.livre.titre %> </h2>
-              <p><%= emprunt.livre.auteur %></p>
-            </div>
-            <% if emprunt.livre.user.photo.present? %>
-              <%= cl_image_tag emprunt.livre.user.photo, class: "card-user" %>
-            <% else %>
-              <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
-            <% end %>
-            <%= link_to "", livre_path(emprunt.livre), class: 'card-link' %>
-          </div>
-          <div class="card-bottom">
-            <% if emprunt.livre.emprunts.sum(:note) > 0 %>
-              <p><%= emprunt.livre.emprunts.average(:note).round(1) %>/5 (<%= emprunt.livre.emprunts.count(:note) %> avis)</p>
-            <% else %>
-              <p>Pas encore de note</p>
-            <% end %>
-          </div>
+        <div class="card-bottom">
+          <% if livre.emprunts.sum(:note) > 0 %>
+            <p><%= livre.emprunts.average(:note).round(1) %>/5 (<%= livre.emprunts.count(:note) %> avis)</p>
+          <% else %>
+            <p>Pas encore de note</p>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-  <div class="notifications">
+  <div class="mes-emprunts hidden">
+    <h2>Mes Emprunts</h2>
+    <% @user.emprunts.each do |emprunt| %>
+      <div class="card">
+        <div class="card-top">
+          <% if emprunt.livre.user.prenom.present? %>
+            <div class="card-category"><%= emprunt.livre.user.prenom %></div>
+          <% else %>
+            <div class="card-category">12eur inconnu</div>
+          <% end %>
+          <div class="card-description">
+            <h2><%= emprunt.livre.titre %> </h2>
+            <p><%= emprunt.livre.auteur %></p>
+          </div>
+          <% if emprunt.livre.user.photo.present? %>
+            <%= cl_image_tag emprunt.livre.user.photo, class: "card-user" %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "card-user") %>
+          <% end %>
+          <%= link_to "", livre_path(emprunt.livre), class: 'card-link' %>
+        </div>
+        <div class="card-bottom">
+          <% if emprunt.livre.emprunts.sum(:note) > 0 %>
+            <p><%= emprunt.livre.emprunts.average(:note).round(1) %>/5 (<%= emprunt.livre.emprunts.count(:note) %> avis)</p>
+          <% else %>
+            <p>Pas encore de note</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="notifications hidden">
     <h2>Mes préférences de communication</h2>
     <p>Notification hebdomadaire des nouveaux livres
     <% if @user.notif_hebdo == true %>
@@ -112,7 +117,7 @@
       <i class="fas fa-minus-circle"></i>
     <% end %></p>
   </div>
-  <div class="notifications">
+  <div class="wishlist hidden">
     <h2>Ma wishlist</h2>
     <% @user.likes.each do |like| %>
       <div class="like">
