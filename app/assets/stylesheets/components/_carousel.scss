@@ -52,6 +52,9 @@
   display: flex;
   justify-content: space-around;
   height: 80%;
+  .pochette-podium {
+    max-height: 100px;
+  }
 }
 .winner {
   display: flex;
@@ -60,12 +63,27 @@
   text-align: center;
   height: 100%;
   width: 30%;
-  z-index: 2;
+  position: relative;
   // align-items: flex-end;
   p {
     font-size: 18px;
     color: rgb(50, 50, 50);
     padding-top: 0.2em;
+  }
+  .moyenne {
+    padding-bottom: 10px;
+  }
+  .podium-link {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    opacity: 0;
   }
 }
 
@@ -147,15 +165,26 @@
     }
   }
   .partie-basse {
-  display: block;
-  .meilleurs-livres {
-    width: 100%;
-    .podium {
-      display: flex;
+    display: block;
+    .meilleurs-livres {
+      width: 100%;
+      .podium {
+        display: flex;
+      }
+    }
+    .dernieres-notes {
+      width: 100%;
     }
   }
-  .dernieres-notes {
-    width: 100%;
+  .number2 {
+    height:100px;
   }
-}
+
+  .number1 {
+    height: 150px;
+  }
+
+  .number3 {
+    height: 50px;
+  }
 }
