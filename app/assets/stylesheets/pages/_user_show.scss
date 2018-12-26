@@ -1,19 +1,16 @@
-.flexbox {
-  display: flex;
-}
-.mes-livres {
-  width: 45%;
-  margin-right: 5%;
-}
-.mes-emprunts {
-  width: 45%;
-}
-
 .fa-check-circle {
   color: green;
 }
 
 .fa-minus-circle {
+  color: #CB1424;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.red {
   color: #CB1424;
 }
 
