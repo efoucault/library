@@ -48,51 +48,60 @@
     <div class="podium">
       <div class="winner">
         <div class="pochette">
-          <%= cl_image_tag @livres[1].pochette, class: "avatar-bordered avatar-classement" %>
+          <% if @livres[1].pochette.present? %>
+            <%= cl_image_tag @livres[1].pochette, class: "pochette-podium" %>
+          <% end %>
         </div>
         <div class="titre">
           <p><%= @livres[1].titre %></p>
         </div>
         <div class="moyenne">
-          <strong><%= @livres[1].emprunts.average(:note).round(1) %> /5</strong>
+          <strong><%= @livres[1].emprunts.average(:note) %> /5</strong>
         </div>
         <div class="number2">
-          <h5 style="color: white; text-align: center;">2</h5>
+          <h5 class="number">2</h5>
         </div>
+        <%= link_to "", livre_path(@livres[1]), class: 'podium-link' %>
       </div>
       <div class="winner">
         <div class="pochette">
-          <%= cl_image_tag @livres[0].pochette, class: "avatar-bordered avatar-classement" %>
+          <% if @livres[0].pochette.present? %>
+            <%= cl_image_tag @livres[0].pochette, class: "pochette-podium" %>
+          <% end %>
         </div>
         <div class="titre">
           <p><%= @livres[0].titre %></p>
         </div>
         <div class="moyenne">
-          <strong><%= @livres[0].emprunts.average(:note).round(1) %> /5</strong>
+          <strong><%= @livres[0].emprunts.average(:note) %> /5</strong>
         </div>
         <div class="number1">
-          <h5 style="color: white; text-align: center;">1</h5>
+          <h5 class="number"">1</h5>
         </div>
+        <%= link_to "", livre_path(@livres[0]), class: 'podium-link' %>
       </div>
       <div class="winner">
         <div class="pochette">
-          <%= cl_image_tag @livres[2].pochette, class: "avatar-bordered avatar-classement" %>
+          <% if @livres[2].pochette.present? %>
+            <%= cl_image_tag @livres[2].pochette, class: "pochette-podium" %>
+          <% end %>
         </div>
         <div class="titre">
           <p><%= @livres[2].titre %></p>
         </div>
         <div class="moyenne">
-          <strong><%= @livres[2].emprunts.average(:note).round(1) %> /5</strong>
+          <strong><%= @livres[2].emprunts.average(:note) %> /5</strong>
         </div>
-        <div class="number2">
-          <h5 style="color: white; text-align: center;">3</h5>
+        <div class="number3">
+          <h5 class="number">3</h5>
         </div>
+        <%= link_to "", livre_path(@livres[2]), class: 'podium-link' %>
       </div>
     </div>
   </div>
   <div class="dernieres-notes">
     <h1>Dernières notes</h1>
-    <% @emprunts.last(3).reverse.each do |emprunt| %>
+    <% @emprunts.each do |emprunt| %>
       <div class="emprunt-note">
         <div class="emprunt-avatar">
           <% if emprunt.user.photo.present? %>
