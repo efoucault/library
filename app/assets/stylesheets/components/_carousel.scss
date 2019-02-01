@@ -158,10 +158,14 @@
     height: 60vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding-left: 0;
-    .pochette {
-      padding-left: 0;
+    .carou-pochette {
+      .pochette {
+        padding-left: 0;
+        max-height: 150px;
+      }
     }
     h3 {
       font-size: 22px;
@@ -181,6 +185,9 @@
     }
     .dernieres-notes {
       width: 100%;
+    }
+    h1 {
+      font-size: 32px;
     }
   }
   .number2 {
