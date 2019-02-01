@@ -176,6 +176,7 @@
       width: 100%;
       .podium {
         display: flex;
+        height: 85%;
       }
     }
     .dernieres-notes {
@@ -195,5 +196,10 @@
   .number3 {
     height: 50px;
     min-height: 50px;
+  }
+  .winner {
+    p {
+      font-size: 14px;
+    }
   }
 }
