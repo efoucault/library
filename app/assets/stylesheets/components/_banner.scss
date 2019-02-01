@@ -126,6 +126,10 @@
     .h2 {
       font-size: 1em !important;
     }
+    #title {
+      font-size :24px;
+      margin-top: 0em;
+    }
     .banner-container {
       flex-direction: column;
       align-items: center;
@@ -144,9 +148,5 @@
         width: 100%;
       }
     }
-  }
-  #title {
-    font-size :1.5em;
-    margin-top: 0em;
   }
 }
